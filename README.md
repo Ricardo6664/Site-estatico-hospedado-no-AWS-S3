@@ -15,9 +15,15 @@
 ## 🚢 Como fazer deploy
 ##### Deverá criar e configurar as access key e access secret key da _AWS_;
 
-##### Em seguida, execute o comando ```bash config_credentials.sh no terminal ```
+##### Em seguida, execute o comando no terminal
+```bash 
+config_credentials.sh
+```
 
-##### E por último deverá executar ```bash start.sh ```
+##### E por último deverá executar 
+```bash 
+start.sh
+```
 
 
 ![static_site_s3](https://github.com/user-attachments/assets/b3e942fc-8edf-4766-8afc-7b8375138144)
