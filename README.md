@@ -19,6 +19,11 @@
 ```python
 python3 -m venv env
 ```
+##### Ative o ambiente virtual
+```bash
+source env/bin/activate
+```
+
 ##### Instale as bibliotecas com requirements.txt
 ``` python
 pip install -r requirements.txt
