@@ -5,21 +5,20 @@ import sys
 import boto3
 from botocore.exceptions import ClientError
 
+from createCloudFront import CloudFront
 
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s | %(levelname)s | %(message)s'
 )
 
-
 class AWS:
 
-    def __init__(self, bucket_name: str):
+    def __init__(self, bucket_name: str, region: str):
         self.initial_bucket_name = bucket_name
         self.s3_client = boto3.client("s3")
         self.sts_client = boto3.client("sts")
-        self.separate_message = "#############################"
-
+        self.region = region
 
     def create_bucket(self):
         try:
@@ -88,9 +87,13 @@ class AWS:
                 'ErrorDocument': {'Key': 'error.html'},
                 'IndexDocument': {'Suffix': 'index.html'},
             })
+            url = f"{bucket}.s3-website-{self.region}.amazonaws.com"
             logging.info("Static Website habilited")
+            logging.info(f"URL public is http://{url}\n")
+            return url
         except Exception as e:
             logging.error(e)
+            return False
 
     def upload_files(self, BUCKET_NAME: str):
         try:
@@ -105,6 +108,7 @@ class AWS:
             
 if __name__ == "__main__":
 
-    aws = AWS("static-site-bucket")
-    aws.configure_static_website()
-    
+    aws = AWS("static-site-bucket", "us-east-1")
+    url_static_website = aws.configure_static_website()
+    cloudfront = CloudFront(url=url_static_website) # type: ignore
+    cloudfront.createDistribution()
