@@ -15,6 +15,15 @@
 ## 🚢 Como fazer deploy
 ##### Deverá criar e configurar as access key e access secret key da _AWS_;
 
+##### Crie um ambiente virtual python
+```python
+python3 -m venv env
+```
+##### Instale as bibliotecas com requirements.txt
+``` python
+pip install -r requirements.txt
+```
+
 ##### Em seguida, execute o comando no terminal
 ```bash 
 sh config_credentials.sh
