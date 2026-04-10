@@ -13,7 +13,9 @@ Foi utilizado em conjunto ao S3 o AWS CloudFront, ele tem por objeto acelerar a 
 HTML e CSS, AWS S3 e CLOUDFRONT
 
 ## 🚢 Como fazer deploy
-Primeiramente é preciso desativar o bloqueio de acesso público indo em permissões dentro da _bucket_. Ainda na aba permissões, é necessário criar uma política para a _bucket_ autorizando a leitura e a obtenção do(s) arquivo(s). Por último, basta ir em propriedades e configurar a _Hospedagem de site estático_.
+Deverá criar e configurar as access key e access secret key da _AWS_.
+Em seguida, execute o comando <!-- sh config_credentials.sh no terminal -->
+E por último deverá executar <!-- sh start.sh -->
 
 
 ![static_site_s3](https://github.com/user-attachments/assets/b3e942fc-8edf-4766-8afc-7b8375138144)
