@@ -17,12 +17,12 @@
 
 ##### Em seguida, execute o comando no terminal
 ```bash 
-bash/sh config_credentials.sh
+sh config_credentials.sh
 ```
 
 ##### E por último deverá executar 
 ```bash 
-bash/sh start.sh
+sh start.sh
 ```
 
 
